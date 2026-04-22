@@ -130,7 +130,7 @@ leggi il nuovo materiale, aggiorna le source note, rafforza le pagine collegate 
 Per manutenzione periodica:
 
 ```text
-fai un lint del wiki digital-thread
+fai un lint del wiki wayout
 ```
 
 ## Regola Finale
