@@ -33,13 +33,6 @@ This repository hosts a persistent set of markdown wikis maintained by LLM-assis
 - Each wiki keeps its own `manifest.md`, `AGENTS.md`, `index.md`, `log.md`, `raw/`, and `wiki/` tree.
 - The workspace root documents the operating model, prompt cookbook, and decision log for the whole solution.
 
-## Main Wikis
-
-- `digital-thread`
-- `imdatatech`
-- `wayout`
-- `homelab`
-
 ## Typical Workflows
 
 - `create` a new wiki from material in `raw/`
