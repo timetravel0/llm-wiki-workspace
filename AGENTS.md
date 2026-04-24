@@ -77,6 +77,76 @@ This vault is a multi-wiki workspace. The workspace layer coordinates independen
 - `archive` for obsolete content that should be retained.
 - `inbox` for temporary holding pages.
 
+## RAG-Compatible Frontmatter
+
+Use this schema for pages that should be indexed by SimpleRAG.
+
+```yaml
+---
+title: "Page title"
+type: concept
+tags: []
+related: []
+status: active
+confidence: high
+rag_index: true
+rag_scope: global
+last_reviewed: ""
+created: ""
+source: ""
+---
+```
+
+### Field Rules
+
+- `title` should match the page title and remain human-readable.
+- `type` should use the canonical page types listed above.
+- `tags` should stay short and semantic.
+- `related` should contain explicit page slugs or page names used for backlinks.
+- `status` should be one of `active`, `stale`, `draft`, or `archived`.
+- `confidence` should be one of `high`, `medium`, `low`, or `inferred`.
+- `rag_index` should be `true` only when the page is ready for RAG indexing.
+- `rag_scope` should be `global`, `wiki-local`, or `private`.
+- `last_reviewed` and `created` should use `YYYY-MM-DD`.
+- `source` should point to the originating source page when the page is derived from another page.
+
+## RAG Ingest Workflow
+
+Use this when SimpleRAG results or retrieved chunks should become wiki knowledge.
+
+1. Receive the query text and the top-k retrieved chunks from SimpleRAG.
+2. Check whether a query page already exists in `wiki/queries/`.
+3. If yes, update it with new evidence; if no, create a new query page.
+4. For each retrieved chunk that contains novel claims:
+   1. Identify the source page it belongs to in `wiki/sources/`.
+   2. If the source page does not exist, create it.
+   3. Update affected concept, entity, topic, comparison, or tool pages with the new claims.
+5. Set `rag_index: true` in the frontmatter of all updated durable pages.
+6. Update `index.md` and `log.md`.
+7. Run lint on affected pages before closing the session.
+
+## Query Page Standard
+
+Query pages should capture durable answers, not transient chat output.
+
+Recommended body sections:
+
+- Question
+- Answer
+- Evidence
+- Related pages
+- Open gaps
+- Next actions
+
+Query pages should default to `type: query` and `rag_index: true` when the answer is meant to be reusable.
+
+## Template Contract
+
+- Keep `wikis/_template/` as the canonical scaffold for new wiki instances.
+- Keep template files small, explicit, and copyable.
+- Prefer templates that can be reused without editing the operating contract.
+- Treat templates as source files for new wiki bootstraps, not as archived examples.
+
 ## Required Wiki Skeleton
 
 When a new wiki is created, it should include:
