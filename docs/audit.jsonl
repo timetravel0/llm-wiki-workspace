@@ -1,0 +1,10 @@
+{"ts": "2026-04-30T14:34:49.908793Z", "event": "document.created", "id": "ad6a3e28dd9a249d", "metadata": {"path": "testbook/wiki-service.md", "size_bytes": 43}}
+{"ts": "2026-04-30T14:35:28.804424Z", "event": "document.updated", "id": "ad6a3e28dd9a249d", "metadata": {"author": "manual-test", "message": "testbook document update"}}
+{"ts": "2026-04-30T15:10:32.010024Z", "event": "document.created", "id": "3370841e73c98fb6", "metadata": {"path": "integrated/platform-test.md", "size_bytes": 85}}
+{"ts": "2026-04-30T15:17:05.507561Z", "event": "document.created", "id": "3370841e73c98fb6", "metadata": {"path": "integrated/platform-test.md", "size_bytes": 85}}
+{"ts": "2026-04-30T15:19:31.630644Z", "event": "document.updated", "id": "3370841e73c98fb6", "metadata": {"author": "write_agent", "message": "confirmed wiki write"}}
+{"ts": "2026-04-30T15:19:40.585416Z", "event": "document.created", "id": "92ec0cff584f0125", "metadata": {"path": "integrated-test/queries/quali-pagine-attive-parlano-di-architettura-page-type-overview-status-active.md", "size_bytes": 788}}
+{"ts": "2026-04-30T15:19:52.252900Z", "event": "document.created", "id": "9aed280e38a2c935", "metadata": {"path": "integrated-test/sources/integrated-platform-test-md.md", "size_bytes": 784}}
+{"ts": "2026-04-30T17:23:04.330258Z", "event": "document.created", "id": "54c22fb107042c0c", "metadata": {"path": "integrated-ui/integrated-page.md", "size_bytes": 97}}
+{"ts": "2026-04-30T17:26:19.227480Z", "event": "document.created", "id": "f5b9d0f679f275fb", "metadata": {"path": "integrated-ui/queries/come-interagiscono-codice-e-wiki-nel-test-integrated-ui.md", "size_bytes": 1272}}
+{"ts": "2026-04-30T19:05:20.781564Z", "event": "document.created", "id": "a4c565e6675d6a28", "metadata": {"path": "integrated-chat/acme_invoice_runbook.md", "size_bytes": 827}}

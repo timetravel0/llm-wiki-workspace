@@ -1,0 +1,21 @@
+{
+  "id": "9aed280e38a2c935",
+  "path": "integrated-test/sources/integrated-platform-test-md.md",
+  "section": "sources",
+  "tags": [
+    "rag",
+    "source-note"
+  ],
+  "metadata": {
+    "section": "sources",
+    "tags": [
+      "rag",
+      "source-note"
+    ],
+    "source": "simple_rag:3"
+  },
+  "created_at": "2026-04-30T15:19:52.247170Z",
+  "content_hash": "1d9154141419b85eb839394bea2056af9c783fcf83e015738a19b5fe6694fe12",
+  "size_bytes": 784,
+  "content_file": "content.md"
+}

@@ -1,0 +1,150 @@
+{
+  "ad6a3e28dd9a249d": {
+    "id": "ad6a3e28dd9a249d",
+    "path": "testbook/wiki-service.md",
+    "section": "testbook",
+    "tags": [
+      "manual",
+      "wiki"
+    ],
+    "metadata": {
+      "section": "testbook",
+      "tags": [
+        "manual",
+        "wiki"
+      ]
+    },
+    "created_at": "2026-04-30T14:34:49.903351Z",
+    "content_hash": "9c734d7352032de23e65fa93d9347e67996c65bb12e6b87e6fbd257328074e97",
+    "size_bytes": 51,
+    "content_file": "content.md",
+    "updated_at": "2026-04-30T14:35:28.798000Z"
+  },
+  "3370841e73c98fb6": {
+    "id": "3370841e73c98fb6",
+    "path": "integrated/platform-test.md",
+    "section": "integrated",
+    "tags": [
+      "manual",
+      "integrated"
+    ],
+    "metadata": {
+      "section": "integrated",
+      "tags": [
+        "manual",
+        "integrated"
+      ]
+    },
+    "created_at": "2026-04-30T15:17:05.504452Z",
+    "content_hash": "ccc3d1f6c058b3a82b801dcc0308aae1767d8894270477d89cdd9304ef91905b",
+    "size_bytes": 65,
+    "content_file": "content.md",
+    "updated_at": "2026-04-30T15:19:31.628290Z"
+  },
+  "92ec0cff584f0125": {
+    "id": "92ec0cff584f0125",
+    "path": "integrated-test/queries/quali-pagine-attive-parlano-di-architettura-page-type-overview-status-active.md",
+    "section": "queries",
+    "tags": [
+      "rag",
+      "query"
+    ],
+    "metadata": {
+      "section": "queries",
+      "tags": [
+        "rag",
+        "query"
+      ],
+      "source": "simple_rag:3"
+    },
+    "created_at": "2026-04-30T15:19:40.582712Z",
+    "content_hash": "2626cd521ef86eef44eb37813a4a614e14e422c530c254a819d786146a6e414a",
+    "size_bytes": 788,
+    "content_file": "content.md"
+  },
+  "9aed280e38a2c935": {
+    "id": "9aed280e38a2c935",
+    "path": "integrated-test/sources/integrated-platform-test-md.md",
+    "section": "sources",
+    "tags": [
+      "rag",
+      "source-note"
+    ],
+    "metadata": {
+      "section": "sources",
+      "tags": [
+        "rag",
+        "source-note"
+      ],
+      "source": "simple_rag:3"
+    },
+    "created_at": "2026-04-30T15:19:52.247170Z",
+    "content_hash": "1d9154141419b85eb839394bea2056af9c783fcf83e015738a19b5fe6694fe12",
+    "size_bytes": 784,
+    "content_file": "content.md"
+  },
+  "54c22fb107042c0c": {
+    "id": "54c22fb107042c0c",
+    "path": "integrated-ui/integrated-page.md",
+    "section": "integrated-ui",
+    "tags": [
+      "ui",
+      "wiki"
+    ],
+    "metadata": {
+      "section": "integrated-ui",
+      "tags": [
+        "ui",
+        "wiki"
+      ],
+      "status": "active"
+    },
+    "created_at": "2026-04-30T17:23:04.323295Z",
+    "content_hash": "320dcd3977b5a1b0c676a1cb87f67d1ec6d6a4609def38c69d5ada833f6766e7",
+    "size_bytes": 97,
+    "content_file": "content.md"
+  },
+  "f5b9d0f679f275fb": {
+    "id": "f5b9d0f679f275fb",
+    "path": "integrated-ui/queries/come-interagiscono-codice-e-wiki-nel-test-integrated-ui.md",
+    "section": "queries",
+    "tags": [
+      "rag",
+      "query"
+    ],
+    "metadata": {
+      "section": "queries",
+      "tags": [
+        "rag",
+        "query"
+      ],
+      "source": "simple_rag:4"
+    },
+    "created_at": "2026-04-30T17:26:19.221374Z",
+    "content_hash": "b44df9d88b92750e066a1058f75751c79cf6da085df543acfb80231a6f51e9b9",
+    "size_bytes": 1272,
+    "content_file": "content.md"
+  },
+  "a4c565e6675d6a28": {
+    "id": "a4c565e6675d6a28",
+    "path": "integrated-chat/acme_invoice_runbook.md",
+    "section": "integrated-chat",
+    "tags": [
+      "acme-invoice",
+      "wiki"
+    ],
+    "metadata": {
+      "section": "integrated-chat",
+      "page_type": "runbook",
+      "status": "active",
+      "tags": [
+        "acme-invoice",
+        "wiki"
+      ]
+    },
+    "created_at": "2026-04-30T19:05:20.772477Z",
+    "content_hash": "b18e97643420cc1e04dd89154531eb6b9cb1a80cc6e661760f6417ac597fea55",
+    "size_bytes": 827,
+    "content_file": "content.md"
+  }
+}
