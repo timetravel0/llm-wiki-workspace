@@ -32,7 +32,7 @@ This repository hosts a persistent set of markdown wikis maintained by LLM-assis
 - `wikis/<wiki-slug>/` contains one independent wiki instance.
 - Each wiki keeps its own `manifest.md`, `AGENTS.md`, `index.md`, `log.md`, `raw/`, and `wiki/` tree.
 - The workspace root documents the operating model, prompt cookbook, and decision log for the whole solution.
-- The `nova-payment-runbook` wiki is bootstrapped under `wikis/`.
+- The `nova-payment-runbook` and `airasca` wikis are bootstrapped under `wikis/`.
 
 ## Typical Workflows
 

@@ -17,7 +17,6 @@ This is the workspace home for the multi-wiki vault.
 
 - The workspace contract is defined.
 - The wiki registry is available at `wikis/index.md`.
-- The `nova-payment-runbook` wiki has been bootstrapped from `raw/nova-payment-runbook.md`.
 - The workspace raw folder still contains generic workspace material that was not assigned to the wiki.
 
 ## Start Here
