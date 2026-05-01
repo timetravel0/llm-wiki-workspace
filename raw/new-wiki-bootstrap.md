@@ -20,6 +20,13 @@ In normal use, the user deposits material in `raw/` and asks the agent to create
 6. Move the source files from workspace `raw/` into `wikis/<wiki-slug>/raw/`.
 7. Ingest the sources and create the initial synthesis pages.
 8. Record the creation in the workspace log.
+9. Publish indexed wiki pages to the integrated platform:
+
+```powershell
+python scripts/publish_to_integrated_platform.py --wiki-slug <wiki-slug> --require-simple-rag-sync
+```
+
+Only pages with `rag_index: true` are published and indexed by `simple_rag`.
 
 ## Standard Wiki Files
 

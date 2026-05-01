@@ -35,6 +35,7 @@ crea un nuovo wiki dal materiale in raw
 proponi tu lo slug se non è evidente
 bootstrap della wiki con index, log, AGENTS, raw e wiki
 ingesta il materiale iniziale e archivia gli originali
+pubblica le pagine indicizzabili verso simple_rag
 ```
 
 ### Prompt Completo
@@ -43,6 +44,7 @@ ingesta il materiale iniziale e archivia gli originali
 Ho depositato un corpus in raw.
 Valuta se merita una wiki autonoma.
 Se sì, crea il wiki, scegli uno slug stabile, aggiorna il registry, ingesta il materiale iniziale e archivia gli originali nella wiki.
+Alla fine esegui il publisher integrato per aggiornare simple_rag.
 Se il corpus non è abbastanza ampio, proponi invece come inserirlo in una wiki già esistente.
 ```
 
@@ -67,6 +69,7 @@ aggiorna il wiki <wiki-slug> con il materiale in raw
 ```text
 aggiorna il wiki <wiki-slug> con il materiale depositato in raw
 leggi il nuovo materiale, aggiorna le source note, rafforza le pagine collegate e archivia gli originali dopo l'ingest
+pubblica le pagine indicizzabili verso simple_rag
 ```
 
 ### Prompt Completo
@@ -76,6 +79,7 @@ Ingesta il nuovo materiale nel wiki <wiki-slug>.
 Aggiorna source note, entity page, concept pages, topic pages, comparison pages e query page se utile.
 Archivia gli originali nel wiki dopo l'ingest.
 Aggiorna anche index e log.
+Alla fine esegui il publisher integrato per aggiornare simple_rag.
 ```
 
 ### Quando Usarlo
@@ -101,6 +105,7 @@ interroga il wiki <wiki-slug> su <domanda>
 usa prima index e poi le pagine rilevanti
 rispondi con sintesi e riferimenti
 se la risposta è durevole, salvala come query page
+se crei o aggiorni una query page indicizzabile, pubblicala verso simple_rag
 ```
 
 ### Prompt Completo
@@ -110,6 +115,7 @@ Interroga il wiki <wiki-slug> su <domanda>.
 Leggi prima l'index del wiki, poi le pagine più pertinenti.
 Rispondi in modo sintetico ma con i riferimenti necessari.
 Se la risposta è utile nel tempo, scrivila anche come pagina query nel wiki.
+Se crei o aggiorni una query page con `rag_index: true`, esegui il publisher integrato.
 ```
 
 ### Quando Usarlo
@@ -201,6 +207,7 @@ Una buona risposta dovrebbe dirti chiaramente:
 - dove sono finiti gli originali
 - quali pagine sono state collegate
 - quali dubbi o contraddizioni restano aperti
+- se il publisher integrato verso simple_rag è stato eseguito e con quale esito
 
 Se la risposta è durevole, salvala come pagina nel wiki invece di lasciarla solo in chat.
 
@@ -226,6 +233,7 @@ Se la risposta è durevole, salvala come pagina nel wiki invece di lasciarla sol
 6. Ingesta i raw.
 7. Archivia gli originali in `wiki/sources/raw/`.
 8. Aggiorna `log.md`.
+9. Esegui `python scripts/publish_to_integrated_platform.py --wiki-slug <slug> --require-simple-rag-sync`.
 
 ### Update
 
@@ -235,6 +243,7 @@ Se la risposta è durevole, salvala come pagina nel wiki invece di lasciarla sol
 4. Rafforza o correggi la tassonomia.
 5. Archivia gli originali.
 6. Aggiorna `index.md` e `log.md`.
+7. Esegui `python scripts/publish_to_integrated_platform.py --wiki-slug <slug> --require-simple-rag-sync`.
 
 ### Query
 
@@ -242,6 +251,7 @@ Se la risposta è durevole, salvala come pagina nel wiki invece di lasciarla sol
 2. Leggi `index.md` e le pagine rilevanti.
 3. Rispondi con sintesi e riferimenti.
 4. Se la risposta è durevole, salva una query page.
+5. Se hai creato o aggiornato pagine con `rag_index: true`, esegui il publisher integrato.
 
 ### Lint
 

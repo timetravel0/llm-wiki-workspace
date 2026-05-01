@@ -32,6 +32,7 @@ This repository hosts a persistent set of markdown wikis maintained by LLM-assis
 - `wikis/<wiki-slug>/` contains one independent wiki instance.
 - Each wiki keeps its own `manifest.md`, `AGENTS.md`, `index.md`, `log.md`, `raw/`, and `wiki/` tree.
 - The workspace root documents the operating model, prompt cookbook, and decision log for the whole solution.
+- The `nova-payment-runbook` wiki is bootstrapped under `wikis/`.
 
 ## Typical Workflows
 
@@ -92,6 +93,47 @@ docs/
 `wikis/<slug>/wiki/**/*.md`, parses YAML frontmatter, indexes only pages with
 `rag_index: true`, and skips unchanged pages using a local hash state file in
 `simple_rag`.
+
+## Native Wiki Publishing To simple_rag
+
+The preferred integrated workflow keeps wiki creation and updates native to
+this workspace:
+
+1. Place source material in `raw/` or `wikis/<wiki-slug>/raw/`.
+2. Ask Codex to create or update the wiki according to `AGENTS.md`.
+3. Codex writes durable pages under `wikis/<wiki-slug>/wiki/`.
+4. Codex marks reusable pages with `rag_index: true`.
+5. Codex runs the publisher:
+
+```powershell
+python scripts/publish_to_integrated_platform.py --wiki-slug <wiki-slug> --require-simple-rag-sync
+```
+
+The publisher:
+
+- scans `wikis/<wiki-slug>/wiki/**/*.md`;
+- selects only active pages with `rag_index: true`;
+- publishes them to `wiki_service/service_api.py`;
+- replaces changed documents by path;
+- calls `simple_rag /api/v1/sync/wiki-service` so the `documentation`
+  collection is updated immediately.
+
+Dry run:
+
+```powershell
+python scripts/publish_to_integrated_platform.py --wiki-slug <wiki-slug> --dry-run
+```
+
+Required integrated env:
+
+```env
+WIKI_LOAD_SHARED_ENV=true
+WIKI_SHARED_ENV_PATH=../.env.shared
+INTERNAL_API_TOKEN=<shared internal token>
+API_AUTH_TOKEN=<simple_rag API token>
+WIKI_SERVICE_URL=http://127.0.0.1:8200
+SIMPLE_RAG_URL=http://127.0.0.1:8000
+```
 
 ## License
 

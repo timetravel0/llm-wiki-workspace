@@ -146,5 +146,85 @@
     "content_hash": "b18e97643420cc1e04dd89154531eb6b9cb1a80cc6e661760f6417ac597fea55",
     "size_bytes": 827,
     "content_file": "content.md"
+  },
+  "822123c50773ead8": {
+    "id": "822123c50773ead8",
+    "path": "wikis/nova-payment-runbook/wiki/overview.md",
+    "section": "wikis",
+    "tags": [],
+    "metadata": {
+      "source": "llm-wiki-workspace",
+      "wiki_slug": "nova-payment-runbook",
+      "wiki_relative_path": "wiki/overview.md",
+      "title": "Nova Payment Reconciliation Runbook",
+      "type": "overview",
+      "tags": [],
+      "rag_scope": "wiki-local",
+      "content_hash": "c20ad00a507682e61c0b64617f75f828e1468d1e80f91fad90968b785718a1fe"
+    },
+    "created_at": "2026-05-01T06:36:29.298646Z",
+    "content_hash": "c20ad00a507682e61c0b64617f75f828e1468d1e80f91fad90968b785718a1fe",
+    "size_bytes": 1188,
+    "content_file": "content.md"
+  },
+  "c4312051a632bc37": {
+    "id": "c4312051a632bc37",
+    "path": "wikis/nova-payment-runbook/wiki/queries/nova-payment-reconciliation-controls.md",
+    "section": "wikis",
+    "tags": [],
+    "metadata": {
+      "source": "llm-wiki-workspace",
+      "wiki_slug": "nova-payment-runbook",
+      "wiki_relative_path": "wiki/queries/nova-payment-reconciliation-controls.md",
+      "title": "Nova Payment Reconciliation Controls",
+      "type": "query",
+      "tags": [],
+      "rag_scope": "wiki-local",
+      "content_hash": "469b9ee11f8890d8a12b320bd566655661ec4eb9e92b264a9ee14e7a93298aa5"
+    },
+    "created_at": "2026-05-01T06:36:29.331995Z",
+    "content_hash": "469b9ee11f8890d8a12b320bd566655661ec4eb9e92b264a9ee14e7a93298aa5",
+    "size_bytes": 1701,
+    "content_file": "content.md"
+  },
+  "fd707651e6f43861": {
+    "id": "fd707651e6f43861",
+    "path": "wikis/nova-payment-runbook/wiki/sources/nova-payment-runbook-source.md",
+    "section": "wikis",
+    "tags": [],
+    "metadata": {
+      "source": "llm-wiki-workspace",
+      "wiki_slug": "nova-payment-runbook",
+      "wiki_relative_path": "wiki/sources/nova-payment-runbook-source.md",
+      "title": "Nova Payment Runbook Source Notes",
+      "type": "source",
+      "tags": [],
+      "rag_scope": "wiki-local",
+      "content_hash": "9b99aaa93a829a8e1d6eb9addccde5d36196d690a06843cde204c5b8911f2eb8"
+    },
+    "created_at": "2026-05-01T06:36:29.361181Z",
+    "content_hash": "9b99aaa93a829a8e1d6eb9addccde5d36196d690a06843cde204c5b8911f2eb8",
+    "size_bytes": 1082,
+    "content_file": "content.md"
+  },
+  "e52b8058dbc0643b": {
+    "id": "e52b8058dbc0643b",
+    "path": "wikis/nova-payment-runbook/wiki/sources/raw/nova-payment-runbook.md",
+    "section": "wikis",
+    "tags": [],
+    "metadata": {
+      "source": "llm-wiki-workspace",
+      "wiki_slug": "nova-payment-runbook",
+      "wiki_relative_path": "wiki/sources/raw/nova-payment-runbook.md",
+      "title": "Nova Payment Reconciliation Runbook",
+      "type": "runbook",
+      "tags": [],
+      "rag_scope": "",
+      "content_hash": "478e54ffa26fb5794f08240cab598ee055f023838cfe05789f7e683ca6ee0349"
+    },
+    "created_at": "2026-05-01T06:36:29.395725Z",
+    "content_hash": "478e54ffa26fb5794f08240cab598ee055f023838cfe05789f7e683ca6ee0349",
+    "size_bytes": 824,
+    "content_file": "content.md"
   }
 }

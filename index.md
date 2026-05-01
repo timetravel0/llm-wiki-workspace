@@ -17,8 +17,8 @@ This is the workspace home for the multi-wiki vault.
 
 - The workspace contract is defined.
 - The wiki registry is available at `wikis/index.md`.
-- The canonical wiki scaffold is available at `wikis/_template/`.
-- No concrete wiki instance has been bootstrapped yet in this checkout.
+- The `nova-payment-runbook` wiki has been bootstrapped from `raw/nova-payment-runbook.md`.
+- The workspace raw folder still contains generic workspace material that was not assigned to the wiki.
 
 ## Start Here
 
@@ -27,4 +27,3 @@ This is the workspace home for the multi-wiki vault.
 3. Read `Guida Codex Wiki.md` for operational prompts.
 4. Use `raw/` for new material that has not yet been assigned to a wiki.
 5. Register wiki instances in `wikis/index.md` when they are created.
-

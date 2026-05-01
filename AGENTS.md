@@ -191,6 +191,17 @@ Use this when a wiki receives new material.
 7. Record the ingest in the wiki-local `log.md`.
 8. Move processed originals into `wiki/sources/raw/`.
 9. Mark contradictions, gaps, and inferences explicitly.
+10. Publish updated durable pages to the integrated platform when integration
+    env is configured:
+
+```powershell
+python scripts/publish_to_integrated_platform.py --wiki-slug <wiki-slug> --require-simple-rag-sync
+```
+
+This command publishes only pages under `wikis/<wiki-slug>/wiki/` with
+`rag_index: true` and then asks `simple_rag` to index the Wiki Service content.
+If `simple_rag` is not running, report the failure clearly and do not claim the
+integrated index is current.
 
 ## Update Workflow
 
@@ -202,6 +213,12 @@ Use this when existing wiki pages need refinement or expansion.
 4. Adjust adjacent pages if the change affects navigation or taxonomy.
 5. Update `index.md` and `log.md`.
 6. Keep the original evidence path traceable.
+7. Run the integrated publisher for the affected wiki when integration env is
+   configured:
+
+```powershell
+python scripts/publish_to_integrated_platform.py --wiki-slug <wiki-slug> --require-simple-rag-sync
+```
 
 ## Query Workflow
 

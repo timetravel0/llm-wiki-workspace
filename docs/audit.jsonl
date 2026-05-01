@@ -8,3 +8,7 @@
 {"ts": "2026-04-30T17:23:04.330258Z", "event": "document.created", "id": "54c22fb107042c0c", "metadata": {"path": "integrated-ui/integrated-page.md", "size_bytes": 97}}
 {"ts": "2026-04-30T17:26:19.227480Z", "event": "document.created", "id": "f5b9d0f679f275fb", "metadata": {"path": "integrated-ui/queries/come-interagiscono-codice-e-wiki-nel-test-integrated-ui.md", "size_bytes": 1272}}
 {"ts": "2026-04-30T19:05:20.781564Z", "event": "document.created", "id": "a4c565e6675d6a28", "metadata": {"path": "integrated-chat/acme_invoice_runbook.md", "size_bytes": 827}}
+{"ts": "2026-05-01T06:36:29.303264Z", "event": "document.created", "id": "822123c50773ead8", "metadata": {"path": "wikis/nova-payment-runbook/wiki/overview.md", "size_bytes": 1188}}
+{"ts": "2026-05-01T06:36:29.339634Z", "event": "document.created", "id": "c4312051a632bc37", "metadata": {"path": "wikis/nova-payment-runbook/wiki/queries/nova-payment-reconciliation-controls.md", "size_bytes": 1701}}
+{"ts": "2026-05-01T06:36:29.363957Z", "event": "document.created", "id": "fd707651e6f43861", "metadata": {"path": "wikis/nova-payment-runbook/wiki/sources/nova-payment-runbook-source.md", "size_bytes": 1082}}
+{"ts": "2026-05-01T06:36:29.403155Z", "event": "document.created", "id": "e52b8058dbc0643b", "metadata": {"path": "wikis/nova-payment-runbook/wiki/sources/raw/nova-payment-runbook.md", "size_bytes": 824}}
