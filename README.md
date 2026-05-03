@@ -2,7 +2,8 @@
 
 Multi-wiki workspace for Codex-driven knowledge bases.
 
-This repository hosts a persistent set of markdown wikis maintained by LLM-assisted workflows for:
+This repository hosts a persistent set of markdown wikis maintained by
+LLM-assisted workflows for:
 
 - ingesting new source material
 - updating existing wiki pages
@@ -10,36 +11,46 @@ This repository hosts a persistent set of markdown wikis maintained by LLM-assis
 - linting for contradictions, gaps, and broken links
 - archiving processed originals and obsolete pages
 
-## Repository Layout
+## Workspace Layout
 
-```text
-.
-├── AGENTS.md
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── Decision Log.md
-├── Guida Codex Wiki.md
-├── LLM Wiki Operating Model.md
-├── raw/
-├── wikis/
-└── ...
-```
+- `AGENTS.md` - global operating contract
+- `README.md` - workspace overview
+- `raw/` - intake area for unassigned material
+- `wikis/` - independent wiki instances
+- `wikis/index.md` - registry of all wiki instances
+
+Active wiki examples:
+
+- `nova-payment-runbook`
+- `airasca`
+- `web-memory`
 
 ## Working Model
 
 - `raw/` is the workspace intake area for unassigned source material.
 - `wikis/<wiki-slug>/` contains one independent wiki instance.
-- Each wiki keeps its own `manifest.md`, `AGENTS.md`, `index.md`, `log.md`, `raw/`, and `wiki/` tree.
-- The workspace root documents the operating model, prompt cookbook, and decision log for the whole solution.
-- The `nova-payment-runbook` and `airasca` wikis are bootstrapped under `wikis/`.
+- Each wiki keeps its own `manifest.md`, `AGENTS.md`, `index.md`, `log.md`,
+  `raw/`, and `wiki/` tree.
+- The workspace root documents the operating model, prompt cookbook, and
+  decision log for the whole solution.
+- `web-memory` is the current example wiki for curated web acquisition before
+  selective publication to `simple_rag`.
 
-## Typical Workflows
+## Bootstrap And Update Flow
 
-- `create` a new wiki from material in `raw/`
-- `update` an existing wiki with new sources
-- `query` the wiki and save durable answers as query pages
-- `lint` the wiki for missing links, contradictions, and coverage gaps
+The current bootstrap references live in:
+
+- `raw/new-wiki-bootstrap.md`
+- `raw/new-wiki-scaffold/`
+
+Use those files when creating a new wiki from workspace intake material.
+
+Typical workflows:
+
+- create a new wiki from material in `raw/`
+- update an existing wiki with new sources
+- query the wiki and save durable answers as query pages
+- lint the wiki for missing links, contradictions, and coverage gaps
 
 ## Internal Wiki Service
 
@@ -59,8 +70,8 @@ does not read the root `.env.shared` unless `WIKI_LOAD_SHARED_ENV=true` is set.
 When enabled, `WIKI_SHARED_ENV_PATH` defaults to `../.env.shared`.
 
 For integrated platform runs, keep shared values such as `INTERNAL_API_TOKEN`,
-`WIKI_DOCS_DIR`, `WIKI_SERVICE_PORT`, and `WIKI_MAX_FILE_SIZE_BYTES` in the root
-workspace `.env.shared` to avoid drift across projects.
+`WIKI_DOCS_DIR`, `WIKI_SERVICE_PORT`, and `WIKI_MAX_FILE_SIZE_BYTES` in the
+root workspace `.env.shared` to avoid drift across projects.
 
 Endpoints:
 

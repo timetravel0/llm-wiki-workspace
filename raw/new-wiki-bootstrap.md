@@ -14,7 +14,8 @@ In normal use, the user deposits material in `raw/` and asks the agent to create
 
 1. Choose the wiki slug.
 2. Create `wikis/<wiki-slug>/`.
-3. Copy the standard wiki files from `wikis/_template/`.
+3. Copy the standard wiki files from `raw/new-wiki-scaffold/` or from an
+   existing maintained wiki that already matches the desired contract.
 4. Add `Decision Log.md` if the wiki needs a durable decision history.
 5. Register the wiki in `wikis/index.md`.
 6. Move the source files from workspace `raw/` into `wikis/<wiki-slug>/raw/`.

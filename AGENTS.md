@@ -17,7 +17,8 @@ This vault is a multi-wiki workspace. The workspace layer coordinates independen
 - `index.md` is the workspace home and navigation entry point.
 - `log.md` records workspace-level events such as bootstrap, refactor, and registry changes.
 - `raw/` holds source material that has not yet been assigned to a wiki.
-- `wikis/_template/` is the canonical scaffold source for new wiki instances.
+- `raw/new-wiki-bootstrap.md` and `raw/new-wiki-scaffold/` are the canonical
+  bootstrap references for new wiki instances.
 
 ### Wiki layer
 
@@ -142,10 +143,12 @@ Query pages should default to `type: query` and `rag_index: true` when the answe
 
 ## Template Contract
 
-- Keep `wikis/_template/` as the canonical scaffold for new wiki instances.
+- Keep `raw/new-wiki-bootstrap.md` and `raw/new-wiki-scaffold/` as the
+  canonical scaffold references for new wiki instances.
 - Keep template files small, explicit, and copyable.
 - Prefer templates that can be reused without editing the operating contract.
-- Treat templates as source files for new wiki bootstraps, not as archived examples.
+- Treat scaffold files as source files for new wiki bootstraps, not as archived
+  examples.
 
 ## Required Wiki Skeleton
 
@@ -171,7 +174,8 @@ Use this when the workspace `raw/` folder contains material that should become a
 1. Read the raw corpus and decide whether it is coherent enough for a standalone wiki.
 2. Choose a stable wiki slug and a clear domain boundary.
 3. Create `wikis/<wiki-slug>/` with the standard skeleton.
-4. Copy the standard files from `wikis/_template/`.
+4. Copy the standard files from `raw/new-wiki-scaffold/` or from a maintained
+   wiki that already matches the desired contract.
 5. Register the new wiki in `wikis/index.md`.
 6. Move the relevant source files from workspace `raw/` into `wikis/<wiki-slug>/raw/`.
 7. Ingest the sources and create the initial wiki pages.
@@ -264,6 +268,8 @@ Use this when content is obsolete but still worth keeping.
 - Every recurring operator task should be documented either in `AGENTS.md` or in the workspace prompt cookbook.
 - The prompt cookbook should show practical prompts for create, update, query, and lint workflows.
 - The operating model page should explain how the whole solution fits together.
+- The `web-memory` wiki is the reference example for curated web acquisition
+  before selective publication to `simple_rag`.
 
 ## Quality Bar
 

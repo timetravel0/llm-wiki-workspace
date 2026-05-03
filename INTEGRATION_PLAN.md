@@ -1,10 +1,10 @@
 # llm-wiki-workspace Integration Plan
 
 > Stato: aggiornato al modello HTTP locale.
-> Il precedente piano file-based e basato su `wikis/_template/` come unico
-> punto di integrazione e' storico. L'integrazione operativa corrente passa da
-> `simple_rag` come orchestratore e da `wiki_service/service_api.py` come API
-> interna localhost per storage Markdown.
+> Il precedente piano file-based e il vecchio scaffold canonico sono storici.
+> L'integrazione operativa corrente passa da `simple_rag` come orchestratore e
+> da `wiki_service/service_api.py` come API interna localhost per storage
+> Markdown.
 
 ## Sommario
 
@@ -203,31 +203,27 @@ Regole:
 - `type`, `status`, `rag_scope` devono usare valori stabili per supportare i filtri;
 - le pagine generate da SimpleRAG devono essere revisionate prima di diventare knowledge base canonica.
 
-## Stato Del Vecchio Scaffold `wikis/_template`
+## Stato Del Vecchio Scaffold Storico
 
-Il contratto storico del workspace cita `wikis/_template/` come scaffold
-canonico. Nel working tree corrente quella directory risulta rimossa o non
-presente, mentre esiste materiale di bootstrap in:
+Il contratto storico del workspace citava un vecchio scaffold canonico. Nel
+working tree corrente quella directory non esiste piu'; il bootstrap reale
+vive in:
 
 ```text
 raw/new-wiki-bootstrap.md
 raw/new-wiki-scaffold/
 ```
 
-Decisione richiesta:
+Decisione chiusa:
 
-- ripristinare `wikis/_template/` come scaffold canonico; oppure
-- aggiornare tutta la documentazione per usare `raw/new-wiki-scaffold/` come
-  sorgente bootstrap.
-
-Finche' questa decisione non e' chiusa, evitare di documentare entrambi come
-fonti canoniche.
+- usare `raw/new-wiki-bootstrap.md` e `raw/new-wiki-scaffold/` come fonti
+  canoniche per il bootstrap dei nuovi wiki.
+- mantenere `web-memory` come esempio attivo del contratto aggiornato.
 
 ## Backlog Residuo
 
 | Priorita | Attivita | Motivazione |
 |---|---|---|
-| Alta | Decidere e riallineare lo scaffold canonico wiki | La documentazione cita ancora `wikis/_template/`, ma la struttura reale non lo contiene |
 | Alta | Aggiungere test minimi diretti per `wiki_service/service_api.py` nel repo wiki | Oggi i test passano da `simple_rag`; il servizio dovrebbe avere anche smoke test propri |
 | Media | Uniformare helper interni tra Wiki Service e PE Service | I due microservizi sono volutamente simili ma duplicano validazione, audit e index JSON |
 | Media | Documentare policy `.obsidian/` | Va deciso se versionare solo config condivise o ignorare tutta la directory |
@@ -272,6 +268,7 @@ Wiki workspace:
 - `AGENTS.md`
 - `LLM Wiki Operating Model.md`
 - `raw/new-wiki-bootstrap.md`
+- `raw/new-wiki-scaffold/`
 
 I documenti storici possono restare consultabili, ma non devono prevalere sul
 contratto operativo corrente.
