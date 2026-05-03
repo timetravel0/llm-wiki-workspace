@@ -21,7 +21,12 @@ if WIKI_LOAD_SHARED_ENV:
     load_dotenv(dotenv_path=(BASE_DIR / WIKI_SHARED_ENV_PATH).resolve(), override=False, encoding="utf-8-sig")
 
 app = FastAPI(title="Wiki Service", docs_url=None, redoc_url=None, openapi_url=None)
-app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])
+ALLOW_INTERNAL_NETWORK = os.getenv("ALLOW_INTERNAL_NETWORK", "0").strip().lower() in {"1", "true", "yes", "on"}
+if ALLOW_INTERNAL_NETWORK:
+    allowed_hosts = ["*"]
+else:
+    allowed_hosts = ["127.0.0.1", "localhost"]
+app.add_middleware(TrustedHostMiddleware, allowed_hosts=allowed_hosts)
 
 DOCS_DIR = Path(os.getenv("WIKI_DOCS_DIR", "./docs")).resolve()
 INTERNAL_TOKEN = os.getenv("INTERNAL_API_TOKEN", "")
@@ -81,6 +86,8 @@ def _write_json(path: Path, data: Any) -> None:
 
 
 def _verify_local(request: Request) -> None:
+    if ALLOW_INTERNAL_NETWORK:
+        return
     host = request.client.host if request.client else ""
     if host == "testclient" and os.getenv("PYTEST_CURRENT_TEST"):
         return
@@ -231,4 +238,8 @@ async def list_sections() -> dict[str, Any]:
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="127.0.0.1", port=int(os.getenv("WIKI_SERVICE_PORT", "8200")))
+    uvicorn.run(
+        app,
+        host=os.getenv("WIKI_SERVICE_HOST", "127.0.0.1"),
+        port=int(os.getenv("WIKI_SERVICE_PORT", "8200")),
+    )

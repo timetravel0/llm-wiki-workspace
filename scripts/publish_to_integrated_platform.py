@@ -42,12 +42,26 @@ def load_env() -> None:
         _load_env_file((ROOT / shared_path).resolve())
 
 
+def _allow_internal_network() -> bool:
+    return os.getenv("ALLOW_INTERNAL_NETWORK", "0").strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _allowed_hosts() -> set[str]:
+    return {
+        host.strip().lower()
+        for host in os.getenv("INTERNAL_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+        if host.strip()
+    }
+
+
 def require_localhost(url: str, label: str) -> str:
     parsed = urllib.parse.urlparse(url)
     if parsed.scheme not in {"http", "https"}:
         raise ValueError(f"{label} deve essere un URL http(s)")
-    if parsed.hostname not in {"127.0.0.1", "localhost", "::1"}:
+    if not _allow_internal_network() and parsed.hostname not in {"127.0.0.1", "localhost", "::1"}:
         raise ValueError(f"{label} deve puntare a localhost")
+    if _allow_internal_network() and parsed.hostname and parsed.hostname.lower() not in _allowed_hosts():
+        raise ValueError(f"{label} deve puntare a un host interno consentito")
     return url.rstrip("/")
 
 
