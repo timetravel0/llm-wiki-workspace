@@ -129,6 +129,12 @@ The publisher:
 - calls `simple_rag /api/v1/sync/wiki-service` so the `documentation`
   collection is updated immediately.
 
+In the integrated platform, these curated wiki pages are also a first-class
+knowledge source for `simple_rag` and its Coordinator. The documentation pages
+published from this workspace can be indexed directly or consumed through the
+internal wiki service, while the workspace remains the source of truth for the
+curated markdown tree.
+
 Dry run:
 
 ```powershell
